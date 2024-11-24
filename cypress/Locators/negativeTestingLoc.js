@@ -1,9 +1,12 @@
 const NegativeTestingLoc = {
 
+    invalidMessage:'.oxd-input-group__message',
     userRoleStatusField: '.oxd-select-wrapper',
-    errorMessages:'.oxd-input-field-error-message',
     employeeNameField:'.oxd-input-field-error-message',
-    usernameField:'data-v-1f99f73c'
+    errorMessages:'.oxd-input-field-error-message',
+    usernameField:'.oxd-input--error'
+
+
 
 }
 

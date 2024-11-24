@@ -1,22 +1,15 @@
-import LoginPageElements from "../../Locators/loginPageLoc";
-import AdminSectionElement from "../../Locators/addnewUserLoc";
+import {AdminSectionElement,EditUser} from "../../Locators/UserManagementLocators";
+import {constants,users} from "../../constants";
 
 class LoginPage {
-    login(username, password) {
+    visit(){
+        cy.visit(constants.URL)
+    }
+    login() {
 
-        this.type(LoginPageElements.usernameField, username)
-        this.type(LoginPageElements.passwordField, password)
-        this.button(LoginPageElements.loginButton)
-    }
-    openAdmin() {
-        cy.get(AdminSectionElement.adminSection).contains('Admin').click()
-    }
-    type(selector,text) {
-        cy.get(selector).type(text)
-    }
-    button(selector){
-        cy.get(selector).click()
+        cy.get(AdminSectionElement.username).type(constants.username)
+        cy.get(AdminSectionElement.password).type(constants.password)
+        cy.get(AdminSectionElement.loginButton).click()
     }
 }
-
 export default LoginPage
